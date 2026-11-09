@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Huzaifa Farooq | AI Agents &amp; Machine Learning</title>
+<style>
+:root{--bg:#eef2f7;--surface:#ffffff;--ink:#14213d;--muted:#52607a;--line:#cdd6e4;--accent:#2f5bea;--accent-ink:#ffffff;--mint:#0e8f78;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1522;--surface:#162033;--ink:#e8eef9;--muted:#9fb0cb;--line:#2a3955;--accent:#7a9bff;--accent-ink:#0e1522;--mint:#4fd1b5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1522;--surface:#162033;--ink:#e8eef9;--muted:#9fb0cb;--line:#2a3955;--accent:#7a9bff;--accent-ink:#0e1522;--mint:#4fd1b5;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-weight:700;line-height:1.15;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:22px;padding-bottom:6px;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-weight:700;font-size:1.15rem}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:54px 0 64px}
+.hero h1{font-size:clamp(2.4rem,6vw,3.8rem);letter-spacing:-.02em}
+.hero p{max-width:34em;color:var(--muted);font-size:1.12rem;margin:20px 0 0}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:.95rem;color:var(--mint);font-weight:600}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--mint);display:inline-block}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 22px}
+.flow h2{font-size:1.05rem;margin-bottom:4px}
+.flow small{color:var(--muted);display:block;margin-bottom:18px}
+.chain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.node{border:2px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;justify-content:space-between;gap:12px;animation:glow 6s infinite}
+.node b{font-weight:600}
+.node span{color:var(--muted);font-size:.92rem}
+.link{width:2px;height:16px;background:var(--line);margin:0 0 0 28px}
+.node:nth-child(3){animation-delay:1.2s}.node:nth-child(5){animation-delay:2.4s}.node:nth-child(7){animation-delay:3.6s}
+@keyframes glow{0%,22%,100%{border-color:var(--line)}6%,16%{border-color:var(--accent)}}
+section{padding:46px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:22px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.about p{margin:0 0 14px;max-width:36em}
+.facts{margin:0;padding:0;list-style:none}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts b{display:block}
+.facts span{color:var(--muted);font-size:.95rem}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:34px}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.paper h3{font-size:1.35rem;margin-bottom:8px}
+.big{font-family:Georgia,serif;font-size:2.4rem;font-weight:700;letter-spacing:-.02em;margin:10px 0 2px}
+.big em{font-style:normal;color:var(--muted);font-size:1.3rem;padding:0 6px}
+.big strong{color:var(--accent)}
+.paper p{margin:8px 0;color:var(--muted)}
+.tools{font-size:.92rem;color:var(--mint);font-weight:600;margin-top:12px}
+.rows h3{font-size:1.3rem;margin-bottom:16px}
+.row{display:grid;grid-template-columns:230px 1fr;gap:22px;padding:18px 0;border-top:1px solid var(--line)}
+.row b{font-size:1.05rem;display:block}
+.row small{color:var(--mint);font-weight:600;display:block;margin-top:2px;font-size:.88rem}
+.row p{margin:0;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 40px}
+.skills div{padding:12px 0;border-bottom:1px solid var(--line)}
+.skills b{display:block;margin-bottom:2px}
+.skills span{color:var(--muted)}
+.contact p{max-width:34em;color:var(--muted);margin:0 0 22px}
+footer{padding:30px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:0 -22px;background-image:radial-gradient(var(--line) 1px,transparent 1.3px);background-size:22px 22px;opacity:.7;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);z-index:-1}
+.skills b{font-family:Georgia,"Iowan Old Style",serif;font-size:1.12rem}
+.learn{margin:0;padding:0;list-style:none}
+.learn li{padding:10px 0;border-bottom:1px solid var(--line)}
+.learn li:last-child{border:0}
+.learn b{color:var(--mint)}
+@media (max-width:760px){
+.hero,.about,.feat,.skills{grid-template-columns:1fr}
+.row{grid-template-columns:1fr;gap:6px}
+.hero{padding:34px 0 44px}
+}
+@media (prefers-reduced-motion:reduce){.node{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Huzaifa Farooq</div>
+<nav><a href="#about">About</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+<main>
+<div class="wrap hero">
+<div>
+<h1>I build AI agents that take calls, orders and emails off your plate.</h1>
+<p>I’m Huzaifa, a computer science graduate from Lahore. I connect LLMs to the tools a business already uses, and I train and test machine learning models to see where they work and where they fail.</p>
+<div class="status"><i></i>Open to jobs and internships</div>
+<div class="btns"><a class="btn primary" href="#work">See my work</a><a class="btn ghost" href="#contact">Say hello</a></div>
+</div>
+<div class="flow" aria-label="How my voice calling agent works">
+<h2>Voice calling agent</h2>
+<small>A call comes in, and the data is logged without anyone typing it.</small>
+<ol class="chain">
+<li class="node"><b>Phone call</b><span>Twilio</span></li><li class="link" aria-hidden="true"></li>
+<li class="node"><b>Listens and replies</b><span>ElevenLabs</span></li><li class="link" aria-hidden="true"></li>
+<li class="node"><b>Moves the data</b><span>n8n</span></li><li class="link" aria-hidden="true"></li>
+<li class="node"><b>Call log saved</b><span>Automatic</span></li>
+</ol>
+</div>
+</div>
+
+<section id="offer"><div class="wrap"><h2>What I can build for a business</h2>
+<div class="skills">
+<div><b>Voice agents</b><span>An agent that answers and makes phone calls, and records every call without anyone typing.</span></div>
+<div><b>WhatsApp and website chat</b><span>Takes orders and answers visitors in real time, and saves each conversation as structured data.</span></div>
+<div><b>Email replies</b><span>Drafts a reply to every incoming email, so a person only needs to review it.</span></div>
+<div><b>Leads and invoices</b><span>Catches leads from forms and turns orders into invoices, with no manual entry.</span></div>
+</div></div></section>
+
+<section id="about"><div class="wrap"><h2>About</h2>
+<div class="about">
+<div>
+<p>I finished my BS in Computer Science at Lahore Garrison University in 2026. Most of my time since has gone into building AI agents with n8n and LLM APIs, and testing and fixing them myself.</p>
+<p>On the machine learning side, I like comparing approaches side by side and then reading the wrong answers to understand why a model fails.</p>
+<p>I’m looking for a team where I can learn how these systems are built for real clients.</p>
+</div>
+<ul class="facts">
+<li><b>Education</b><span>BS Computer Science, Lahore Garrison University, 2022 to 2026</span></li>
+<li><b>Certifications</b><span>IBM AI Fundamentals; HackerRank Python (Basic) and SQL (Basic)</span></li>
+<li><b>Based in</b><span>Lahore, Pakistan</span></li>
+</ul>
+</div></div></section>
+
+<section id="work"><div class="wrap"><h2>Projects</h2>
+<div class="feat">
+<article class="paper"><h3>Sentiment analysis of movie reviews</h3>
+<div class="big">88.3%<em>to</em><strong>90.8%</strong></div>
+<p>Accuracy on 25K unseen IMDB reviews. A TF-IDF and Logistic Regression baseline against a fine-tuned DistilBERT (F1 0.907).</p>
+<p>I read the wrong predictions afterwards. Most mistakes were sarcastic or mixed reviews.</p>
+<div class="tools">Python, scikit-learn, Hugging Face, Google Colab</div></article>
+<article class="paper"><h3>From LeNet-5 to AlexNet</h3>
+<p>A review paper on how CNNs developed for image classification, plus an experiment: I trained an AlexNet-style model on CIFAR-10 and replaced Local Response Normalization with Batch Normalization.</p>
+<p>Both versions used the same settings (Adam, learning rate 0.001, batch size 64, 20 epochs) so the comparison is fair.</p>
+<div class="tools">Python, PyTorch, Google Colab, Kaggle</div></article>
+</div>
+
+<div class="rows"><h3>AI agents and automation</h3>
+<div class="row"><div><b>Voice calling agent</b><small>ElevenLabs, Twilio, n8n</small></div><p>Handles inbound and outbound calls and logs the call data automatically.</p></div>
+<div class="row"><div><b>WhatsApp restaurant agent</b><small>WhatsApp Cloud API, n8n, Google Sheets</small></div><p>Takes customer orders on WhatsApp and logs them in a sheet, so nobody enters orders by hand.</p></div>
+<div class="row"><div><b>Gmail reply agent</b><small>n8n, Groq, Gemini, Google Sheets</small></div><p>Saves incoming emails for tracking and uses LLM prompts to draft replies, which cuts response time.</p></div>
+<div class="row"><div><b>Lead capture agent</b><small>n8n, webhooks, Google Sheets API</small></div><p>Catches leads from forms and other sources as they arrive and saves every one, so none are missed.</p></div>
+<div class="row"><div><b>Order-to-invoice automation</b><small>n8n, Google Forms, Gmail API</small></div><p>Turns a form order into a logged row, a calculated total and an HTML invoice sent by email.</p></div>
+<div class="row"><div><b>Website chatbot</b><small>n8n, LLM APIs, HTML and CSS</small></div><p>A chat widget that answers visitors in real time and saves each conversation as structured data.</p></div>
+</div>
+<p style="margin-top:22px">More code and workflows are on <a href="https://github.com/Huzaifatutorial/ai-automation-projects">my GitHub</a>.</p>
+</div></section>
+
+<section id="how"><div class="wrap"><h2>How I work</h2>
+<div class="about">
+<div>
+<p>I start with the task a person does by hand today, build the workflow around it, then test it with real inputs and fix whatever breaks. I write down how each piece works, so someone else can pick it up.</p>
+<p>For machine learning, I compare more than one approach and read the wrong answers before I trust a number.</p>
+</div>
+<ul class="learn">
+<li><b>Learning now</b><br>RAG, so an assistant can answer from a company’s own documents</li>
+<li><b>Learning now</b><br>LangGraph, for agents that work together</li>
+<li><b>Learning now</b><br>Fine-tuning models on custom data</li>
+</ul>
+</div></div></section>
+
+<section id="skills"><div class="wrap"><h2>Skills</h2>
+<div class="skills">
+<div><b>Automation</b><span>n8n, Make, Zapier, webhooks, REST APIs, Google Sheets API, Gmail API</span></div>
+<div><b>Voice and messaging</b><span>ElevenLabs, Twilio, WhatsApp Cloud API</span></div>
+<div><b>AI and LLMs</b><span>Groq, Google Gemini, AI agent workflows, prompt engineering</span></div>
+<div><b>Machine learning</b><span>PyTorch, scikit-learn, Hugging Face Transformers, Colab, Kaggle</span></div>
+<div><b>Programming</b><span>Python, SQL, Pandas, JavaScript, HTML, CSS, Git and GitHub</span></div>
+<div><b>Also</b><span>Linux, Docker (basics), cloud basics (GCP and AWS)</span></div>
+</div></div></section>
+
+<section id="contact" class="contact"><div class="wrap"><h2>Contact</h2>
+<p>I’m open to full-time roles and internships in AI and automation. The quickest way to reach me is email.</p>
+<div class="btns"><a class="btn primary" href="mailto:huzaifafarooq740@gmail.com">Email me</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/huzaifa-farooq-882661312">LinkedIn</a>
+<a class="btn ghost" href="https://github.com/Huzaifatutorial/ai-automation-projects">GitHub</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">Huzaifa Farooq, Lahore, Pakistan</div></footer>
+</body>
+</html>
